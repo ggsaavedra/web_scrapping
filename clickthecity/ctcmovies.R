@@ -1,4 +1,4 @@
-setwd('/Users/maggiesaavedra/Moonlight/')
+setwd('/Users/maggiesaavedra/GitHub/web_scrapping/clickthecity/')
 
 # Set locall time
 Sys.setlocale("LC_COLLATE", "C")
@@ -15,8 +15,8 @@ api_url <- 'http://database.gekkowebhosting.com/api-mega/post-movie'
 api_mh <- 'http://database.gekkowebhosting.com/api-mega/post-movie-house'
 
 # read previous files
-prev <- fread('directory/movie_nowshowing.csv')
-cinemas <- fread('directory/cinemas.csv')
+prev <- fread('src/movies_showing.csv')
+cinemas <- fread('src/moviehouse.csv')
 
 # read wholepage
 webpage <- read_html(url)
@@ -130,12 +130,12 @@ movies_final <- c()
                               '&phone=', phone,
                               '&theater_info=', theater_info,
                               '&secret_key=POST-megadb-547778-452220-870001'))
-            print(paste(cinema_name, 'was added to the directory'))
+            print(paste(cinema_name_, 'was added to the directory'))
             
           }else{
             print(paste(cinema_name_, 'alredy exist in the directory'))
           }
-          
+          Sys.sleep(0.1)
         }
       }
       

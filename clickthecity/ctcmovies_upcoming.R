@@ -1,4 +1,4 @@
-setwd('/Users/maggiesaavedra/Moonlight/')
+setwd('/Users/maggiesaavedra/GitHub/web_scrapping/clickthecity/')
 
 # Set locall time
 Sys.setlocale("LC_COLLATE", "C")
@@ -14,7 +14,7 @@ url <- 'https://www.clickthecity.com/movies/upcoming-movies.php'
 api_url = 'http://database.gekkowebhosting.com/api-mega/post-movie'
 
 # read previous files
-prev <- fread('directory/movie_upcoming.csv')
+prev <- fread('src/movies_upcoming.csv')
 
 # read wholepage 
 webpage <- read_html(url)
