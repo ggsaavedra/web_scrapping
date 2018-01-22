@@ -38,7 +38,7 @@ for (i in 1:length(title_)){
       subpage <- read_html(hr)
       genre <- ifelse( test = length(html_text(html_nodes(subpage, ".genre")))!=0, 
                                yes = html_text(html_nodes(subpage, ".genre")),
-                               no = 'NULL') 
+                               no = 'NULL')
       if(genre=='NULL'){break}
       score <- html_text(html_node(subpage, "#details div:nth-child(1)")) # get score
       

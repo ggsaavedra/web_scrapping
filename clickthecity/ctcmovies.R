@@ -16,7 +16,7 @@ api_mh <- 'http://database.gekkowebhosting.com/api-mega/post-movie-house'
 
 # read previous files
 prev <- fread('src/movies_showing.csv')
-cinemas <- fread('src/moviehouse.csv')
+movie_house <- fread('src/moviehouse.csv')
 
 # read wholepage
 webpage <- read_html(url)
@@ -30,15 +30,11 @@ details_ <- c(html_text(details_data))
 
 movies_final <- c()
 
-  for (i in 3:length(title_)){
+  for (i in 1:length(title_)){
     title <- ifelse( test = length((title_[[i]])['title'])!=0 , 
                         yes = (title_[[i]])['title'] , 
                         no = 'NULL' ) # get title 
     # print(title)
-    
-    genre <- ifelse( test = length(html_text(html_nodes(subpage, ".genre")))!=0, 
-                     yes = html_text(html_nodes(subpage, ".genre")),
-                     no = 'NULL') 
     
     details <- details_[i]
     
@@ -49,6 +45,11 @@ movies_final <- c()
     # print(href)
     
       subpage <- read_html(hr)
+      
+      genre <- ifelse( test = length(html_text(html_nodes(subpage, ".genre")))!=0, 
+                       yes = html_text(html_nodes(subpage, ".genre")),
+                       no = 'NULL') 
+      
       mtrcb_ratings <- ifelse( test = length(html_text(html_nodes(subpage, ".mtrcb")))!=0, 
                                   yes = html_text(html_nodes(subpage, ".mtrcb")),
                                   no = 'NULL') # get mtcb_rating
@@ -68,19 +69,15 @@ movies_final <- c()
                          yes = substring(((strsplit((strsplit(image_data, 'url'))$style[2], ') '))[[1]])[1], 2),
                          no = 'NULL')
 
-      cinema_data <- ifelse( test = length((html_attrs(html_nodes(subpage, ".menu:nth-child(3) li:nth-child(1) a"))))!=0,
+      cinema_link <- ifelse( test = length((html_attrs(html_nodes(subpage, ".menu:nth-child(3) li:nth-child(1) a"))))!=0,
                              yes = html_attrs(html_nodes(subpage, ".menu:nth-child(3) li:nth-child(1) a")),
                              no = 'NULL')
       
-      if(cinema_data=='NULL'){
-        
-        cinemas <- cbind(cinema_name='NULL', theater_info='NULL', phone='NULL', address='NULL')
+      if(cinema_link=='NULL'){
         
       }else{
-        ch <- paste0('https://www.clickthecity.com', cinema_data[[1]])
-        cinema_href <- ch # get cinema href
-        # print(cinema_href)
-        
+        ch <- paste0('https://www.clickthecity.com/', cinema_link[[1]])
+
         cinema_page <-  read_html(ch)
         cinema_data <- html_attrs(html_nodes(cinema_page, "#cinemas a"))  # get cinema_data
         cinema_href <- paste0('https://www.clickthecity.com/movies/', (html_attrs(html_nodes(cinema_page, "#cinemas a"))))
@@ -92,7 +89,7 @@ movies_final <- c()
                                 yes = html_text(html_node(cinema_page, '#details h1')),
                                 no = ' ')
           cinemas[j] <- cinema_name_
-          if(is.na(match(cinema_name, cinemas))){
+          if(is.na(match(cinema_name_, movie_house))){
             
             if((html_text(html_nodes(cinema_page, 'dt'))[1])=='Theater Info' &
                (html_text(html_nodes(cinema_page, 'dt'))[2])=='Phone' & 
@@ -117,10 +114,10 @@ movies_final <- c()
               
             }else {}
             
-            fwrite(as.data.table(cbind(cinema_name, theater_info, phone, address)), 'directory/cinemas.csv', append = TRUE)
+            fwrite(as.data.table(cbind(cinema_name_, theater_info, phone, address)), 'src/moviehouse.csv', append = TRUE)
             
-            cinema_name <- gsub(' ', '%20', cinema_name)
-            theater_info <- gsub(' ', '%20', theater_info)
+            cinema_name <- gsub(' ', '%20', cinema_name_)
+            theater_info <- gsub('\n', '%0A', (gsub(' ', '%20', theater_info)))
             phone <- gsub(' ', '%20', phone)
             address <- gsub('\n', '%0A', (gsub(' ', '%20', address)))
             
@@ -130,12 +127,12 @@ movies_final <- c()
                               '&phone=', phone,
                               '&theater_info=', theater_info,
                               '&secret_key=POST-megadb-547778-452220-870001'))
-            print(paste(cinema_name_, 'was added to the directory'))
+            print(paste(cinema_name_, 'WAS ADDED to the directory'))
             
           }else{
-            print(paste(cinema_name_, 'alredy exist in the directory'))
+            print(paste(cinema_name_, 'ALREADY EXIST in the directory'))
           }
-          Sys.sleep(0.1)
+          Sys.sleep(3)
         }
       }
       
@@ -190,7 +187,7 @@ movies_final <- c()
         
       }
      
-     Sys.sleep(0.1)
+     Sys.sleep(3)
   }
 
-fwrite(movies_final, 'directory/movie_nowshowing.csv', row.names = FALSE, append = FALSE)
+fwrite(movies_final, 'src/movies_showing.csv', row.names = FALSE, append = TRUE)

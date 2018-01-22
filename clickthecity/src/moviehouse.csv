@@ -1,2 +1,393 @@
 cinema_name,address,phone,theater_info
-"test","test","test","test"
+Alabang Town Center Cinema 5,DTS,"(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Ayala Fairview Terraces Cinema 1, , ,"Ayala Fairview Terraces
+4th Level Fairview Terraces, Quirino Hi-way
+Novaliches
+Quezon City
+"
+Ayala Malls Cloverleaf Cinema 1, , ,"Ayala Malls Cloverleaf
+A. Bonifacio Avenue
+Brgy. Balingasa
+Quezon City
+"
+Ayala Malls Feliz Cinema 2, , ,"Ayala Malls Feliz
+Marcos Highway (Marikina-Infanta Highway)
+Brgy. Dela Paz
+Pasig City
+"
+Ayala Malls South Park Cinema 1, , ,"Ayala Malls South Park
+National Road
+Brgy. Alabang
+Muntinlupa City
+"
+Ayala Malls The 30th Cinema 2, , ,"Ayala Malls The 30th
+30 Meralco Avenue
+Pasig City
+"
+Ayala Malls Vertis North Cinema 3, , ,"Ayala Malls Vertis North
+North Avenue
+Brgy. Bagong Pag-asa
+Quezon City
+"
+Bonifacio High Street Cinema 2 (ATMOS), ,(+632) 956-8942.,"Bonifacio High Street
+3F Central Square
+5th Avenue cor. 30th Street, Bonifacio Global City
+Taguig
+"
+Century City Mall Cinema 2, ,(63 2) 705-6200 loc 124,"Century City Mall
+3rd Floor Century City Mall, Kalayaan Ave. cor. Salamanca St.
+Brgy. Poblacion
+Makati City
+"
+Commercenter Cinemas Cinema 2, ,(63 2) 893-1450,"Commercenter Cinemas
+2nd Floor Commercenter Cinema Bldg., Filinvest and East Asia Drive
+Filinvest Corporate City
+Muntinlupa City
+"
+Eastwood Citywalk 2 Cinema 2,Dolby Digital Surround-EX,"(63 2) 709-0888, (63 2) 709-9888","Eastwood Citywalk 2
+188 E. Rodriguez Jr. Avenue
+Bagumbayan, Libis
+Quezon City
+"
+Evia Lifestyle Center Cinema 4, ,(63 977) 235-6541,"Evia Lifestyle Center
+Evia Lifestyle Center in Bgy. Tindig na Mangga
+Daang-Hari, Almanza Dos
+Las Piñas City
+"
+Festival Cinema 10, ,"(63 2) 850-3571, (63 2) 850-3572","Festival Supermall
+Corporate Ave. cor. Civic Drive
+Filinvest Corporate City, Alabang
+Muntinlupa
+"
+Fisher Mall VIP Parkway Cinema, , ,"Fisher Mall
+325 Quezon Ave. corner Roosevelt Ave.
+Brgy. Sta. Cruz
+Quezon City
+"
+Forum Robinsons Cinema 1, ,"(63 2) 687-5378, (63 2) 398-8007","Forum Robinsons
+No. 30 EDSA corner Pioneer St.
+Mandaluyong City
+"
+Gateway Cineplex 6, ,(63 2) 911-3101,"Gateway Mall
+Araneta Center
+Quezon City
+"
+Glorietta 4 Cinema 1,Dolby Stereo Digital,"(63 2) 752-7880, (63 2) 752-7881, (63 2) 752-7882","Glorietta 4
+4th Level Glorietta 4, Ayala Center
+Makati City
+"
+Greenbelt 3 Cinema 4,Dolby Stereo Digital (DSD),(63 2) 757-3861,"Greenbelt 3
+Ayala Center
+Makati City
+"
+Lucky Chinatown Cinema 2, ,(63 2)791-8111,"Lucky Chinatown Mall
+5/F Reina Regente St. Corner Dela Reina St.
+Brgy. 293 Zone 28, Binondo
+Manila
+"
+Newport Cinema 2,"The Newport Cinemas are located at the 4th level of Newport Mall, Resorts World Manila, Pasay City.",(63 2) 836-6333,"Newport Mall
+100 Andrew's Avenue
+Newport City
+Pasay City
+"
+Power Plant Dolby Atmos Cinema 6, ,"(63 2) 898-1440, (63 2) 898-1441","Power Plant Mall
+Rockwell Drive cor. Estrella St.
+Makati City
+"
+Robinsons Galleria Cinema 3, ,(63 2) 397-1888 local 690,"Robinsons Galleria
+EDSA cor. Ortigas Ave.
+Quezon City
+"
+Robinsons Magnolia Cinema 4, ,"(63 2) 961-5275, (63 2) 961-5276, (63 2) 961-5277, (63 2) 961-5278","Robinsons Magnolia
+Aurora Blvd. corner Doña M. Hemady St.
+New Manila
+Quezon City
+"
+Robinsons Manila Cinema 2 (Midtown), ,(63 2) 397-7020,"Robinsons Place Manila
+Pedro Gil cor. Adriatico Sts.
+Ermita
+Manila
+"
+Robinsons Metro East Cinema 5, ,"(632) 249-0157, (63 2) 682-8199, (63 2) 249-0401, (63 2) 249-0168","Robinsons Metro East
+Dela Paz Marcos Highway
+Pasig City
+"
+Robinsons Place Las Piñas Cinema 1, ,(63 2) 886-9234,"Robinsons Place Las Piñas
+Level 2, 345 Alabang-Zapote Road
+Las Piñas City
+"
+Shangri-la Plaza Cinema 1,Dolby,"(63 2) 633-2227, (63 2) 633-7851 Loc. 171","Shangri-la Plaza Mall
+EDSA cor. Shaw Blvd.
+Mandaluyong City
+"
+TriNoma Cinema 5, ,"(63 2) 901-3693, (63 2) 901-3694, (63 2) 901-3695","TriNoma Mall
+EDSA cor. North Ave.
+Quezon City
+"
+U.P. Town Center Cinema 2, , ,"U.P. Town Center
+Katipunan Ave.
+Diliman
+Quezon City
+"
+Uptown Mall Cinema 2, ,(63 2) 869-9029,"Uptown Mall
+3rd Level, Uptown Mall
+9th Ave. corner 36th St., Uptown Bonifacio, The Fort
+Taguig
+"
+Venice Cineplex Cinema 5, , ,"Venice Grand Canal Mall
+3rd Level, Venice Grand Canal Mall
+Upper McKinley Road, McKinley Hill, BGC
+Taguig
+"
+Vista Mall Las Piñas Cinema 1, , ,"Vista Mall Las Piñas
+C.V. Starr Ave.
+Philamlife Village, Pamplona II
+Las Piñas City
+"
+Vista Mall Taguig Cinema 2, ,(63 947) 838-8282,"Vista Mall Taguig
+Vista Mall Phase 2, Bgy. Tuktukan
+Taguig
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Alabang Town Center Cinema 5,DTS,"(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Ayala Fairview Terraces Cinema 1, , ,"Ayala Fairview Terraces
+4th Level Fairview Terraces, Quirino Hi-way
+Novaliches
+Quezon City
+"
+Ayala Malls Cloverleaf Cinema 1, , ,"Ayala Malls Cloverleaf
+A. Bonifacio Avenue
+Brgy. Balingasa
+Quezon City
+"
+Ayala Malls Feliz Cinema 2, , ,"Ayala Malls Feliz
+Marcos Highway (Marikina-Infanta Highway)
+Brgy. Dela Paz
+Pasig City
+"
+Ayala Malls South Park Cinema 1, , ,"Ayala Malls South Park
+National Road
+Brgy. Alabang
+Muntinlupa City
+"
+Ayala Malls The 30th Cinema 2, , ,"Ayala Malls The 30th
+30 Meralco Avenue
+Pasig City
+"
+Ayala Malls Vertis North Cinema 3, , ,"Ayala Malls Vertis North
+North Avenue
+Brgy. Bagong Pag-asa
+Quezon City
+"
+Bonifacio High Street Cinema 2 (ATMOS), ,(+632) 956-8942.,"Bonifacio High Street
+3F Central Square
+5th Avenue cor. 30th Street, Bonifacio Global City
+Taguig
+"
+Century City Mall Cinema 2, ,(63 2) 705-6200 loc 124,"Century City Mall
+3rd Floor Century City Mall, Kalayaan Ave. cor. Salamanca St.
+Brgy. Poblacion
+Makati City
+"
+Commercenter Cinemas Cinema 2, ,(63 2) 893-1450,"Commercenter Cinemas
+2nd Floor Commercenter Cinema Bldg., Filinvest and East Asia Drive
+Filinvest Corporate City
+Muntinlupa City
+"
+Eastwood Citywalk 2 Cinema 2,Dolby Digital Surround-EX,"(63 2) 709-0888, (63 2) 709-9888","Eastwood Citywalk 2
+188 E. Rodriguez Jr. Avenue
+Bagumbayan, Libis
+Quezon City
+"
+Evia Lifestyle Center Cinema 4, ,(63 977) 235-6541,"Evia Lifestyle Center
+Evia Lifestyle Center in Bgy. Tindig na Mangga
+Daang-Hari, Almanza Dos
+Las Piñas City
+"
+Festival Cinema 10, ,"(63 2) 850-3571, (63 2) 850-3572","Festival Supermall
+Corporate Ave. cor. Civic Drive
+Filinvest Corporate City, Alabang
+Muntinlupa
+"
+Fisher Mall VIP Parkway Cinema, , ,"Fisher Mall
+325 Quezon Ave. corner Roosevelt Ave.
+Brgy. Sta. Cruz
+Quezon City
+"
+Forum Robinsons Cinema 1, ,"(63 2) 687-5378, (63 2) 398-8007","Forum Robinsons
+No. 30 EDSA corner Pioneer St.
+Mandaluyong City
+"
+Gateway Cineplex 6, ,(63 2) 911-3101,"Gateway Mall
+Araneta Center
+Quezon City
+"
+Glorietta 4 Cinema 1,Dolby Stereo Digital,"(63 2) 752-7880, (63 2) 752-7881, (63 2) 752-7882","Glorietta 4
+4th Level Glorietta 4, Ayala Center
+Makati City
+"
+Greenbelt 3 Cinema 4,Dolby Stereo Digital (DSD),(63 2) 757-3861,"Greenbelt 3
+Ayala Center
+Makati City
+"
+Lucky Chinatown Cinema 2, ,(63 2)791-8111,"Lucky Chinatown Mall
+5/F Reina Regente St. Corner Dela Reina St.
+Brgy. 293 Zone 28, Binondo
+Manila
+"
+Newport Cinema 2,"The Newport Cinemas are located at the 4th level of Newport Mall, Resorts World Manila, Pasay City.",(63 2) 836-6333,"Newport Mall
+100 Andrew's Avenue
+Newport City
+Pasay City
+"
+Power Plant Dolby Atmos Cinema 6, ,"(63 2) 898-1440, (63 2) 898-1441","Power Plant Mall
+Rockwell Drive cor. Estrella St.
+Makati City
+"
+Robinsons Galleria Cinema 3, ,(63 2) 397-1888 local 690,"Robinsons Galleria
+EDSA cor. Ortigas Ave.
+Quezon City
+"
+Robinsons Magnolia Cinema 4, ,"(63 2) 961-5275, (63 2) 961-5276, (63 2) 961-5277, (63 2) 961-5278","Robinsons Magnolia
+Aurora Blvd. corner Doña M. Hemady St.
+New Manila
+Quezon City
+"
+Robinsons Manila Cinema 2 (Midtown), ,(63 2) 397-7020,"Robinsons Place Manila
+Pedro Gil cor. Adriatico Sts.
+Ermita
+Manila
+"
+Robinsons Metro East Cinema 5, ,"(632) 249-0157, (63 2) 682-8199, (63 2) 249-0401, (63 2) 249-0168","Robinsons Metro East
+Dela Paz Marcos Highway
+Pasig City
+"
+Robinsons Place Las Piñas Cinema 1, ,(63 2) 886-9234,"Robinsons Place Las Piñas
+Level 2, 345 Alabang-Zapote Road
+Las Piñas City
+"
+Shangri-la Plaza Cinema 1,Dolby,"(63 2) 633-2227, (63 2) 633-7851 Loc. 171","Shangri-la Plaza Mall
+EDSA cor. Shaw Blvd.
+Mandaluyong City
+"
+TriNoma Cinema 5, ,"(63 2) 901-3693, (63 2) 901-3694, (63 2) 901-3695","TriNoma Mall
+EDSA cor. North Ave.
+Quezon City
+"
+U.P. Town Center Cinema 2, , ,"U.P. Town Center
+Katipunan Ave.
+Diliman
+Quezon City
+"
+Uptown Mall Cinema 2, ,(63 2) 869-9029,"Uptown Mall
+3rd Level, Uptown Mall
+9th Ave. corner 36th St., Uptown Bonifacio, The Fort
+Taguig
+"
+Venice Cineplex Cinema 5, , ,"Venice Grand Canal Mall
+3rd Level, Venice Grand Canal Mall
+Upper McKinley Road, McKinley Hill, BGC
+Taguig
+"
+Vista Mall Las Piñas Cinema 1, , ,"Vista Mall Las Piñas
+C.V. Starr Ave.
+Philamlife Village, Pamplona II
+Las Piñas City
+"
+Vista Mall Taguig Cinema 2, ,(63 947) 838-8282,"Vista Mall Taguig
+Vista Mall Phase 2, Bgy. Tuktukan
+Taguig
+"
+Alabang Town Center Cinema 4,"Digital Theater System (DTS)
+Guaranteed Seating Cinema (GSC)","(63 2) 842-2289, (63 2) 850-8931, (63 2) 850-9582","Alabang Town Center
+Alabang Commercial Corporation
+Alabang-Zapote Road
+Muntinlupa
+"
+Ayala Fairview Terraces Cinema 2, , ,"Ayala Fairview Terraces
+4th Level Fairview Terraces, Quirino Hi-way
+Novaliches
+Quezon City
+"
+Ayala Malls Cloverleaf Cinema 6, , ,"Ayala Malls Cloverleaf
+A. Bonifacio Avenue
+Brgy. Balingasa
+Quezon City
+"
+Ayala Malls Feliz Cinema 1, , ,"Ayala Malls Feliz
+Marcos Highway (Marikina-Infanta Highway)
+Brgy. Dela Paz
+Pasig City
+"
+Ayala Malls The 30th Cinema 4, , ,"Ayala Malls The 30th
+30 Meralco Avenue
+Pasig City
+"
+Bonifacio High Street Cinema 4, ,(+632) 956-8942.,"Bonifacio High Street
+3F Central Square
+5th Avenue cor. 30th Street, Bonifacio Global City
+Taguig
+"
+Festival Cinema 6, ,"(63 2) 850-3571, (63 2) 850-3572","Festival Supermall
+Corporate Ave. cor. Civic Drive
+Filinvest Corporate City, Alabang
+Muntinlupa
+"
+Fisher Mall Cinema 4, , ,"Fisher Mall
+325 Quezon Ave. corner Roosevelt Ave.
+Brgy. Sta. Cruz
+Quezon City
+"
+Forum Robinsons Cinema 2, ,"(63 2) 687-5378, (63 2) 398-8007","Forum Robinsons
+No. 30 EDSA corner Pioneer St.
+Mandaluyong City
+"
+Gateway Cineplex 3, ,(63 2) 911-3101,"Gateway Mall
+Araneta Center
+Quezon City
+"
+Glorietta 4 Cinema 4,DTS,"(63 2) 752-7880, (63 2) 752-7881, (63 2) 752-7882","Glorietta 4
+4th Level Glorietta 4, Ayala Center
+Makati City
+"
+Greenbelt 3 Cinema 5,Dolby Stereo Digital (DSD),(63 2) 757-3861,"Greenbelt 3
+Ayala Center
+Makati City
+"
