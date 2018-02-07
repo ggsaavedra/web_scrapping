@@ -12,20 +12,21 @@ library(httr)
 # url
 url <- 'https://www.clickthecity.com/movies/now-showing.php'
 api_url <- 'http://database.gekkowebhosting.com/api-mega/post-movie'
-api_mh <- 'http://database.gekkowebhosting.com/api-mega/post-movie-house'
+api_cinema <- 'http://database.gekkowebhosting.com/api-mega/post-cinema'
 
 # read previous files
 prev <- fread('src/movies_showing.csv')
-movie_house <- fread('src/moviehouse.csv')
+mv_cinem <- fread('src/cinemas.csv')
 
 # read wholepage
-webpage <- read_html(url)
+download.file(url, destfile = 'src/tmp1.html')
+webpage <- read_html('src/tmp1.html')
 
 title_data <- html_nodes(webpage, "#maincontent h3 a")
 title_ <- html_attrs(title_data)
 
 
-details_data <- html_nodes(webpage, "div+ span , li:nth-child(3) h3+ div span")
+details_data <- html_nodes(webpage, "#maincontent h3~ span")
 details_ <- c(html_text(details_data))
 
 movies_final <- c()
@@ -68,6 +69,8 @@ movies_final <- c()
       image <- ifelse(test = length(substring(((strsplit((strsplit(image_data, 'url'))$style[2], ') '))[[1]])[1], 2)),
                          yes = substring(((strsplit((strsplit(image_data, 'url'))$style[2], ') '))[[1]])[1], 2),
                          no = 'NULL')
+      
+      trailer_link <- html_attrs(html_nodes(subpage , '.wrapper a'))[[1]]['href']
 
       cinema_link <- ifelse( test = length((html_attrs(html_nodes(subpage, ".menu:nth-child(3) li:nth-child(1) a"))))!=0,
                              yes = html_attrs(html_nodes(subpage, ".menu:nth-child(3) li:nth-child(1) a")),
@@ -81,15 +84,17 @@ movies_final <- c()
         cinema_page <-  read_html(ch)
         cinema_data <- html_attrs(html_nodes(cinema_page, "#cinemas a"))  # get cinema_data
         cinema_href <- paste0('https://www.clickthecity.com/movies/', (html_attrs(html_nodes(cinema_page, "#cinemas a"))))
+        cinema_name_ <- html_text(html_nodes(cinema_page, "#cinemas a"))
         
         cinemas <- NULL
         for(j in 1:length(cinema_href)){
-          cinema_page <- read_html(cinema_href[j])
+          download.file(cinema_href[j], destfile = 'src/tmp.html')
+          cinema_page <- read_html('src/tmp.html')
           cinema_name_ <- ifelse(test = length(html_text(html_nodes(cinema_page, '#details h1')))!=0,
                                 yes = html_text(html_node(cinema_page, '#details h1')),
                                 no = ' ')
           cinemas[j] <- cinema_name_
-          if(is.na(match(cinema_name_, movie_house))){
+          if(is.na(match(cinema_name_, mv_cinem$cinema_name_))){
             
             if((html_text(html_nodes(cinema_page, 'dt'))[1])=='Theater Info' &
                (html_text(html_nodes(cinema_page, 'dt'))[2])=='Phone' & 
@@ -112,17 +117,23 @@ movies_final <- c()
               phone <- ' '
               address <- (html_text(html_nodes(cinema_page, 'dd')))[1]
               
-            }else {}
+            }else {
+              
+            }
             
-            fwrite(as.data.table(cbind(cinema_name_, theater_info, phone, address)), 'src/moviehouse.csv', append = TRUE)
+            movie_house <- gsub("(.+?)(\\\n.*)", "\\1", address)
+            address <- gsub("(.+?)(\\\n.*)", "\\2", address)
+            fwrite(as.data.table(cbind(cinema_name_, movie_house, theater_info, phone, address)), 'src/cinemas.csv', append = TRUE)
             
             cinema_name <- gsub(' ', '%20', cinema_name_)
+            movie_house <- gsub(' ', '%20', movie_house)
             theater_info <- gsub('\n', '%0A', (gsub(' ', '%20', theater_info)))
             phone <- gsub(' ', '%20', phone)
             address <- gsub('\n', '%0A', (gsub(' ', '%20', address)))
             
-            POST(url = paste0(api_mh,
+            POST(url = paste0(api_cinema,
                               '?cinema_name=', cinema_name,
+                              '&movie_house=', movie_house,
                               '&address=', address,
                               '&phone=', phone,
                               '&theater_info=', theater_info,
@@ -132,14 +143,14 @@ movies_final <- c()
           }else{
             print(paste(cinema_name_, 'ALREADY EXIST in the directory'))
           }
-          Sys.sleep(3)
+          Sys.sleep(5)
         }
       }
       
       opening_date <- 'opened'
       status <- 'showing'
       trailer_link <- 'NA'
-      cinema_name <- (paste(cinemas, sep = ',', collapse = ','))
+      cinema_name <- (paste(cinema_name_, sep = ',', collapse = ','))
       
       movies <- as.data.table(cbind(title,
                                     genre,
@@ -157,7 +168,7 @@ movies_final <- c()
       
       if (is.na(match(title, prev$title)) & is.na(match(cinema_name, prev$cinema_name))){
         
-        title <- gsub(' ', '%20', title)
+        title <- gsub(' ', '%20', gsub('&', '%26', title))
         genre <- gsub(' ', '%20', genre)
         image <- image
         details <- gsub('\n', '%0A', (gsub(' ', '%20', details)))
@@ -166,8 +177,8 @@ movies_final <- c()
         cinema_name <- gsub(' ', '%20', (paste(cinemas, sep = ',', collapse = ',')))
         status <- 'showing'
         mtrcb_ratings <- mtrcb_ratings
-        score <- gsub(' ', '%20', score)
-        trailer_link <- 'NA'
+        score <- gsub('\n', '%0A', (gsub(' ', '%20', score)))
+        trailer_link <- gsub(' ', '%20', trailer_link)
         
         
         POST(url = paste0(api_url,
@@ -185,9 +196,11 @@ movies_final <- c()
                           '&secret_key=POST-megadb-547778-452220-870001'))
         print(paste('DONE WITH MOVIE ENTITLED', (title_[[i]])['title']))
         
+      }else{
+        print(paste('NO CHANGES IN MOVIE ENTITLED', (title_[[i]])['title']))
       }
      
-     Sys.sleep(3)
+     Sys.sleep(5)
   }
 
 fwrite(movies_final, 'src/movies_showing.csv', row.names = FALSE, append = TRUE)

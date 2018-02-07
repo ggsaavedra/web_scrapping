@@ -17,14 +17,15 @@ api_url = 'http://database.gekkowebhosting.com/api-mega/post-movie'
 prev <- fread('src/movies_upcoming.csv')
 
 # read wholepage 
-webpage <- read_html(url)
+download.file(url, destfile = 'src/tmp3.html')
+webpage <- read_html('src/tmp3.html')
 
 title_data <- html_nodes(webpage, "#maincontent h3 a")
 title_ <- unique(html_attrs(title_data))
 
 movies_upcoming <- c()
 
-for (i in 1:length(title_)){
+for (i in 8:length(title_)){
   title <- ifelse( test = length((title_[[i]])['title'])!=0 , 
                    yes = (title_[[i]])['title'] , 
                    no = 'NULL' ) # get title 
@@ -34,8 +35,9 @@ for (i in 1:length(title_)){
                 yes = (title_[[i]])['href'], 
                 no = 'NULL')
   href <- hr # get href
-  
-      subpage <- read_html(hr)
+
+      download.file(hr, destfile = 'src/tmp4.html')
+      subpage <- read_html('src/tmp4.html')
       genre <- ifelse( test = length(html_text(html_nodes(subpage, ".genre")))!=0, 
                                yes = html_text(html_nodes(subpage, ".genre")),
                                no = 'NULL')
@@ -80,7 +82,7 @@ for (i in 1:length(title_)){
       
       if (is.na(match(title, prev$title))){
         
-        title <- gsub(' ', '%20', title)
+        title <-gsub(' ', '%20', gsub('&', '%26', title))
         genre <- gsub(' ', '%20', genre)
         image <- image
         details <- 'NA'
@@ -113,4 +115,4 @@ for (i in 1:length(title_)){
       }
 }
 
-fwrite(movies_upcoming, 'directory/movie_upcoming.csv', row.names = FALSE, append = FALSE)
+fwrite(movies_upcoming, 'src/movies_upcoming.csv', row.names = FALSE, append = TRUE)
