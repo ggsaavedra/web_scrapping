@@ -11,6 +11,9 @@ library(httr)
 
 api_moviehouse <- 'http://database.gekkowebhosting.com/api-mega/post-movie-house'
 api_sched <- 'http://database.gekkowebhosting.com/api-mega/post-movie-house-schedule'
+delete_api <- 'http://database.gekkowebhosting.com/api-mega/reset-schedules?secret_key=POST-megadb-547778-452220-870001'
+
+POST(url = delete_api)
 
 prev_mh <- fread('src/moviehouse.csv')
 prev_sched <- fread('src/moviehouse_schedule.csv')

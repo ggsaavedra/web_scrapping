@@ -119,7 +119,7 @@ for (i in 1:length(title_)){
       details <- gsub('\n', '%0A', (gsub(' ', '%20', details)))
       credits <- gsub('\n', '%0A', (gsub(' ', '%20', credits)))
       opening_date <- 'opened'
-      cinema_name <- gsub(' ', '%20', (paste(cinemas, sep = ',', collapse = ',')))
+      cinema_name <- gsub(' ', '%20', (paste(cinema_name, sep = ',', collapse = ',')))
       status <- 'showing'
       mtrcb_ratings <- mtrcb_ratings
       score <- gsub('\n', '%0A', (gsub(' ', '%20', score)))
