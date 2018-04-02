@@ -1,4 +1,4 @@
-setwd('/Users/maggiesaavedra/GitHub/web_scrapping/clickthecity/')
+#setwd('~/clickthecity')
 
 # Set locall time
 Sys.setlocale("LC_COLLATE", "C")

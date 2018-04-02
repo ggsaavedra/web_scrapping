@@ -1,4 +1,4 @@
-setwd('/Users/maggiesaavedra/GitHub/web_scrapping/clickthecity/')
+#setwd('/Users/maggiesaavedra/GitHub/web_scrapping/clickthecity/')
 
 # Set locall time
 Sys.setlocale("LC_COLLATE", "C")
@@ -25,7 +25,7 @@ title_ <- unique(html_attrs(title_data))
 
 movies_upcoming <- c()
 
-for (i in 8:length(title_)){
+for (i in 1:length(title_)){
   title <- ifelse( test = length((title_[[i]])['title'])!=0 , 
                    yes = (title_[[i]])['title'] , 
                    no = 'NULL' ) # get title 
