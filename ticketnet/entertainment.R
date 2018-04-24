@@ -5,9 +5,14 @@ Sys.setlocale("LC_COLLATE", "C")
 # Scrapping in R using rvest
 library(rvest)
 library(lubridate)
+library(data.table)
+library(httr)
 
 # ticketnet entertainment section
 url <- 'https://www.ticketnet.com.ph/index.php/entertainment'
+
+#POST API
+api <- "http://database.gekkowebhosting.com/api-mega/post-event"
 
 # read wholepage or entertainment section
 webpage <- read_html(url)
@@ -74,6 +79,21 @@ for (i in 1:length(attr_data)){
     print(res)
     event_data <- rbind(event_data, res)
     Sys.sleep(0.001)
+
+# pushin to the post API
+    title <- gsub('\n', '%0A', (gsub(' ', '%20', name_data)))
+    address <- gsub('\n', '%0A', (gsub(' ', '%20', location_data)))
+    schedule <- gsub('\n', '%0A', (gsub(' ', '%20', sched_data)))
+    details <- gsub('\n', '%0A', (gsub(' ', '%20', details_data)))
+    long_image <- gsub('\n', '%0A', (gsub(' ', '%20', image_data)))
+    
+    POST(url = paste0(api,
+                      '?title=', title,
+                      '&address=', address,
+                      '&schedule=', schedule,
+                      '&details=', details,
+                      '&long_image=', long_image,
+                      '&secret_key=POST-megadb-547778-452220-870001'))
     
     #delete naming history
     rm(name_data, location_data, sched_data, details_data, image_data)
@@ -82,4 +102,8 @@ for (i in 1:length(attr_data)){
 
 event_data_unique <- as.data.table(event_data[!duplicated(event_data),])
 names(event_data_unique) <- c("name", "location", "sched", "details", "image")
+<<<<<<< HEAD
 fwrite(event_data_unique, 'Moonlight/events/ticketnet/entertainment.csv')
+=======
+fwrite(event_data_unique, '/home/events/ticketnet.csv')
+>>>>>>> 64e2e29d06e54966ca8d67907791117781398e8b
