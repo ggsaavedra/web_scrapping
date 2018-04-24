@@ -82,4 +82,4 @@ for (i in 1:length(attr_data)){
 
 event_data_unique <- as.data.table(event_data[!duplicated(event_data),])
 names(event_data_unique) <- c("name", "location", "sched", "details", "image")
-fwrite(event_data_unique, 'Moonlight/ticketnet/entertainment.csv')
+fwrite(event_data_unique, 'Moonlight/events/ticketnet/entertainment.csv')
