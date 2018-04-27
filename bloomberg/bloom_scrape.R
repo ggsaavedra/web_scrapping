@@ -4,7 +4,7 @@ library(rvest)
 library(data.table)
 link <- 'https://www.bloomberg.com/search?query=philippines&endTime=2018-04-25T03:18:40.983Z&page='
 
-for (i in 461:1363){
+for (i in 1292:1363){
   url <- read_html(paste0(link,i))
   date <- as.POSIXct(strptime(html_text(html_nodes(url, '.published-at')), format = ' %b %d, %Y '))
   headline <- html_text(html_nodes(url, '.search-result-story__headline a'))
